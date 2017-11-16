@@ -19,7 +19,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("wangchenyan.keystore")
+            storeFile file("kame-lqm.keystore")
             storePassword getLocalValue("STORE_PASSWORD")
             keyAlias getLocalValue("KEY_ALIAS")
             keyPassword getLocalValue("KEY_PASSWORD")
@@ -33,6 +33,7 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }

@@ -16,6 +16,44 @@
 #   public *;
 #}
 
+#指定代码的压缩级别
+-optimizationpasses 5
+
+#包明不混合大小写
+-dontusemixedcaseclassnames
+
+#不去忽略非公共的库类
+-dontskipnonpubliclibraryclasses
+
+ #优化  不优化输入的类文件
+-dontoptimize
+
+ #预校验
+-dontpreverify
+
+ #混淆时是否记录日志
+-verbose
+
+ # 混淆时所采用的算法
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+
+#保护注解
+-keepattributes *Annotation*
+
+-ignorewarnings
+
+-keep class com.iflytek.**{*;}
+-keep class com.baidu.**{*;}
+-keep class com.baidu.android.**{*;}
+-keep class org.apache.http.**{*;}
+-keep class com.baidu.tts.**{*;}
+-keep class com.android.volley.**{*;}
+
+-keep class com.baidu.voicerecognition.android.**{*;}
+-libraryjars libs/armeabi/libmsc.so
+
+-libraryjars libs/arm64-v8a/libmsc.so
+
 -keepattributes Signature, InnerClasses, LineNumberTable
 
 # android-support
@@ -55,52 +93,3 @@
 
 # jid3
 -dontwarn org.blinkenlights.jid3.**
-
-
-#指定代码的压缩级别
--optimizationpasses 5
-
-#包明不混合大小写
--dontusemixedcaseclassnames
-
-#不去忽略非公共的库类
--dontskipnonpubliclibraryclasses
-
- #优化  不优化输入的类文件
--dontoptimize
-
- #预校验
--dontpreverify
-
- #混淆时是否记录日志
--verbose
-
- # 混淆时所采用的算法
--optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
-
-#保护注解
--keepattributes *Annotation*
-
--ignorewarnings
-
--keep class com.iflytek.**{*;}
--keep class com.baidu.**{*;}
--keep class com.baidu.android.**{*;}
--keep class org.apache.http.**{*;}
--keep class com.baidu.tts.**{*;}
--keep class com.android.volley.**{*;}
-
--keep class com.baidu.voicerecognition.android.**{*;}
--libraryjars libs/armeabi/libbd_easr_s1_merge_normal_20151216.dat.so
--libraryjars libs/armeabi/libbd_etts.so
--libraryjars libs/armeabi/libbdEASRAndroid.v1.9.11.so
--libraryjars libs/armeabi/libBDSpeechDecoder_V1.so
--libraryjars libs/armeabi/libbdtts.so
--libraryjars libs/armeabi/libBDVoiceRecognitionClient_MFE_V1_s2.so
--libraryjars libs/armeabi/libgnustl_shared.so
--libraryjars libs/armeabi/libmsc.so
-
--libraryjars libs/arm64-v8a/libbd_easr_s1_merge_normal_20151216.dat.so
--libraryjars libs/arm64-v8a/libbdEASRAndroid.v1.9.11.so
--libraryjars libs/arm64-v8a/libBDVoiceRecognitionClient_MFE_V1_s2.so
--libraryjars libs/arm64-v8a/libmsc.so
